@@ -18,6 +18,7 @@ export class CadastroComponent {
     }
 
     cadastrar(event){
+        console.log('event funcion!');
 
         event.preventDefault();
         let headers =  new Headers();
