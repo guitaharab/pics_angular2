@@ -11,6 +11,8 @@ import { routing } from './app.routes';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { FiltroTitulo } from './foto/foto.pipes';
+import {FormsModule} from '@angular/forms'
+
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { FiltroTitulo } from './foto/foto.pipes';
         HttpModule, 
         PanelModule, 
         routing,
+        FormsModule
         
     ],
     declarations : [ AppComponent, ListagemComponent, CadastroComponent],

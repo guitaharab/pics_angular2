@@ -3,24 +3,24 @@
 </div>
 <div class='container'>
     <div class='col-md-6'>
-        <form class='row'>
+        <form class='row' (submit)="cadastrar($event)">
             <div>
                     <label>Titulo</label>
-                    <input class='form-control' name='titulo' placeholder="Digite o titulo da foto">
+                    <input [(ngModel)]='foto.titulo' class='form-control' name='titulo' placeholder="Digite o titulo da foto">
             </div>
             <div>
                     <label>URL</label>
-                    <input class='form-control' name='url' placeholder="Digite a url da foto">
+                    <input [(ngModel)]='foto.url' class='form-control' name='url' placeholder="Digite a url da foto">
             </div>
             <div>
                     <label>Descrição</label>
-                    <textarea class='form-control' name='descricao'>
+                    <textarea [(ngModel)]='foto.descricao' class='form-control' name='descricao'>
 
                     </textarea>
             </div>
         </form>
         <br>
-        <button class='btn btn-primary' type='submit' name='salva'>
+        <button class='btn btn-primary' type='submit'>
             Salvar!
         </button>
         <a class='btn btn-primary' [routerLink]="['']">
