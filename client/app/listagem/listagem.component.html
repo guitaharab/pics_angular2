@@ -1,20 +1,28 @@
 <div class='jumtrom'>
-        <h1 class='text-center'>Pics!</h1>
-    </div>
-    <div class='container'>
-        <div class='row'>
-            <div class = 'col-md-12'>
-                <span class='input-group'>
-                    <a class='input-grou-btn' [routerLink] ="['/cadastro']" class='btn btn-danger'>
-                        Adicionar Foto
-                    </a>
-                </span> 
-            </div>
+    <h1 class='text-center'>Pics!</h1>
+</div>
+<div class='container'>
+    <div class='row'>
+        <div class = 'col-md-12'>
+            <form>
+                <div class='input-group'>
+                    <span class='input-group-btn'>
+                            <a  [routerLink] ="['/cadastro']" class='btn btn-danger'>
+                                Adicionar Foto
+                            </a>
+                    </span> 
+                    <input #InputTexto (keyup)='0' class='form-control' placeholder='Filtrar as fotos pelo título'>
+                </div>
+            </form>
         </div>
-        <panel *ngFor='let foto of fotos' titulo={{foto.titulo}}>
-            <foto  url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
-        </panel>
     </div>
+    <br>
+    <div class='row'>
+        <panel *ngFor='let foto of fotos | filtroTitulo : InputTexto.value' titulo="{{foto.titulo}}" class='col-md-2'>
+            <foto  url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+        </panel>      
+    </div>
+</div>
     
     
     

@@ -10,6 +10,7 @@ import { PanelModule } from './panel/panel.module';
 import { routing } from './app.routes';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
+import { FiltroTitulo } from './foto/foto.pipes';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ListagemComponent } from './listagem/listagem.component';
         FotoModule, 
         HttpModule, 
         PanelModule, 
-        routing
+        routing,
+        
     ],
     declarations : [ AppComponent, ListagemComponent, CadastroComponent],
     bootstrap : [ AppComponent]

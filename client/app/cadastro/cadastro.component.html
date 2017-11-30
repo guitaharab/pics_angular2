@@ -1,1 +1,33 @@
-<h1>Cadastro</h1>
+<div class='jumbotrom'>
+    <h1 class='text-center'>Cadastro de fotos</h1>
+</div>
+<div class='container'>
+    <div class='col-md-6'>
+        <form class='row'>
+            <div>
+                    <label>Titulo</label>
+                    <input class='form-control' name='titulo' placeholder="Digite o titulo da foto">
+            </div>
+            <div>
+                    <label>URL</label>
+                    <input class='form-control' name='url' placeholder="Digite a url da foto">
+            </div>
+            <div>
+                    <label>Descrição</label>
+                    <textarea class='form-control' name='descricao'>
+
+                    </textarea>
+            </div>
+        </form>
+        <br>
+        <button class='btn btn-primary' type='submit' name='salva'>
+            Salvar!
+        </button>
+        <a class='btn btn-primary' [routerLink]="['']">
+            Voltar
+        </a>
+    </div>
+    <div class='col-md-6'>
+        <foto url='http://thechurchontheway.org/wp-content/uploads/2016/05/placeholder1.png' titulo='camera'></foto>
+    </div>
+</div>
