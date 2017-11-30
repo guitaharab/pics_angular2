@@ -1,25 +1,45 @@
 <div class='jumbotrom'>
-    <h1 class='text-center'>Cadastro de fotos</h1>
+    <h1 class='text-center'>{{foto.titulo}}</h1>
 </div>
 <div class='container'>
     <div class='col-md-6'>
-        <form class='row' (submit)="cadastrar($event)">
+        <form  [formGroup]='meuForm' class='row' (submit)="cadastrar($event)">
             <div>
                     <label>Titulo</label>
-                    <input [(ngModel)]='foto.titulo' class='form-control' name='titulo' placeholder="Digite o titulo da foto">
+                    <input
+                    formControlName="titulo"
+                    [(ngModel)]='foto.titulo' 
+                    class='form-control' 
+                    name='titulo' 
+                    placeholder="Digite o titulo da foto">
+                    <span *ngIf="meuForm.controls.titulo.invalid" class='form-control alert-danger'>
+                        Titulo obrigatório.
+                    </span>
             </div>
             <div>
                     <label>URL</label>
-                    <input [(ngModel)]='foto.url' class='form-control' name='url' placeholder="Digite a url da foto">
+                    <input
+                    formControlName="url"
+                    [(ngModel)]='foto.url' 
+                    class='form-control' 
+                    name='url' 
+                    placeholder="Digite a url da foto">
+                    <span *ngIf="meuForm.controls.url.invalid" class='form-control alert-danger'>
+                        URL obrigatória.
+                    </span>
             </div>
             <div>
                     <label>Descrição</label>
-                    <textarea [(ngModel)]='foto.descricao' class='form-control' name='descricao'>
+                    <textarea
+                    formControlName="descricao" 
+                    [(ngModel)]='foto.descricao' 
+                    class='form-control' 
+                    name='descricao'>
 
                     </textarea>
             </div>
             <br>
-            <button class='btn btn-primary' type="submit">
+            <button class='btn btn-primary' type="submit" [disabled]='meuForm.invalid'>
                 Salvar!
             </button>
             <a class='btn btn-primary' [routerLink]="['']">
@@ -28,6 +48,6 @@
         </form>
     </div>
     <div class='col-md-6'>
-        <foto url='http://thechurchontheway.org/wp-content/uploads/2016/05/placeholder1.png' titulo='camera'></foto>
+        <foto url={{foto.url}} titulo={{foto.titulo}}></foto>
     </div>
 </div>

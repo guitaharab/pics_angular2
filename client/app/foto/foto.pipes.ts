@@ -8,7 +8,7 @@ import { FotoComponent } from "./foto.component";
 export class FiltroTitulo implements PipeTransform{
 
     transform(foto:FotoComponent[],digitado:String){
-        let titulo = digitado.toLocaleLowerCase();
+        let titulo = digitado.toString().toLocaleLowerCase();
 
         return foto.filter(foto => foto.titulo.toLocaleLowerCase().includes(titulo));
     }
